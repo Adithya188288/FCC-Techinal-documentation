@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Technical Documentation</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- User Story #1: I can see a main element with a corresponding id="main-doc", 
+      which contains the page's main content (technical documentation). -->
+
+    <!-- Main Section  -->
+    <main id="main-doc">
+      <!-- User Story #2: Within the #main-doc element, I can see several section elements, 
+        each with a class of main-section. There should be a minimum of 5. -->
+
+      <!-- User Story #4: Each section element with the class of main-section should also have
+         an id that corresponds with the text of each header contained within it. Any spaces 
+         should be replaced with underscores (e.g. The section that contains the header 
+         "Javascript and Java" should have a corresponding id="Javascript_and_Java").  -->
+
+      <!-- Introduction section -->
+      <section class="intro">
+        <h1 class="text-center">Introduction to Sass</h1>
+        <article>
+          <p>
+            Sass is a stylesheet language that’s compiled to CSS. It allows you
+            to use variables, nested rules, mixins, functions, and more, all
+            with a fully CSS-compatible syntax. Sass helps keep large
+            stylesheets well-organized and makes it easy to share design within
+            and across projects.
+          </p>
+        </article>
+      </section>
+
+      <!-- main-section 1 -->
+      <!-- Has 3 code elements -->
+      <!-- Has 3 li elements -->
+      <!-- Has 3 p elements -->
+
+      <section class="main-section" id="Installing_Sass">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Installing Sass</h2></header>
+        <article>
+          <p>
+            Inorder order to run SASS you need npm installed. You can get npm by
+            Installing NODE JS
+          </p>
+          <p>
+            You can download nodejs from this
+            <a
+              class="link"
+              href="https://nodejs.org/en/download/"
+              target="_blank"
+              >link</a
+            >.
+          </p>
+          <p>
+            After installing node, open a terminal window within the project
+            folder in any code editor of your choice.
+          </p>
+          <p>
+            Inorder to install sass. We have to create a Package.json file. We
+            can create a package.json file by running the command
+            <em>npm init</em>
+          </p>
+          <p>Press enter for the all the questions and type <em>YES</em></p>
+          <pre>
+              <code>
+                Example - package.json
+                  
+                {
+                  "name": "technical-documentation",
+                  "version": "1.0.0",
+                  "description": "",
+                  "main": "index.js",
+                  "scripts": {
+                    "test": "echo \"Error: no 
+                     test specified\" && exit 1"
+                  },
+                  "author": "",
+                  "license": "ISC"
+                }
+                
+                
+                Is this OK? (yes)
+              
+              </code>
+           </pre>
+          <p>
+            If you want to learn more about package.json file. Follow this
+            <a
+              class="link"
+              href="https://docs.npmjs.com/files/package.json"
+              target="_blank"
+              >link</a
+            >
+          </p>
+          <ul>
+            <li>
+              To download Sass type the below code in the terminal
+            </li>
+          </ul>
+          <div class="left-margin">
+            <code>
+              npm install node-sass
+            </code>
+          </div>
+          <ul>
+            <li>
+              In your package.json file, remove the code inside the script tag
+              and add the following code. Note we have to create a directory
+              called scss and add all the sass files there.
+            </li>
+          </ul>
+          <div class="left-margin">
+            <code>
+              "sass": "node-sass -w scss/ -o dist/css/ --recursive --use-polling
+              --polling-interval 1000"
+            </code>
+          </div>
+          <ul>
+            <li>
+              Start sass using the following command -
+            </li>
+          </ul>
+          <div class="left-margin">
+            <code>
+              npm run sass
+            </code>
+          </div>
+          <p>
+            Here we have created a new script called <em>sass</em>. So from now
+            on after you run the script sass and save any changes to your sass
+            file. It will automatically compile the changes to and update the
+            css file.
+          </p>
+        </article>
+      </section>
+
+      <!-- main-section 2 -->
+      <!-- Has 1 code elements -->
+      <!-- Has 1 li elements -->
+      <!-- Has 2 p elements -->
+
+      <section class="main-section" id="Variables">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Variables</h2></header>
+        <article>
+          <p>
+            Just like we have used variables in CSS. We can use variables in
+            Sass also. Please note that the variables in Css and Sass are
+            completely different. We use variables to store information.
+          </p>
+          <ul>
+            <li>
+              In Order to use a variables in sass, we have prefix a $ sign.
+            </li>
+          </ul>
+          <div>
+            <pre>
+              <code>
+                Example - Variables
+                
+                $font-stack: Helvetica, sans-serif;
+              </code>
+            </pre>
+          </div>
+          <p>
+            Just imagine you have used the colour yellow throughout the webpage
+            without using any variable. If you want to change it, you have to go
+            to each section and change it individually. This can become very
+            time consuming. But on using a variable, if you change the colour
+            assigned to the variable. It will change it throughout the page.
+            There is more use of variable than this. We will look into it once
+            we understand about mixins.
+          </p>
+        </article>
+      </section>
+
+      <!-- main-section 3 -->
+      <!-- Has 2 code elements -->
+      <!-- Has 2 li elements -->
+      <!-- Has 2 p elements -->
+
+      <section class="main-section" id="Partials">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Partials</h2></header>
+        <article>
+          <p>
+            When your sass file is kinda long. You can separate the particular
+            block of sass code into a separate file using a partial.
+          </p>
+          <ul>
+            <li>
+              To create a partial, the file name has start with an _
+            </li>
+          </ul>
+          <div>
+            <pre>
+              <code>
+                Example - Partials 
+
+                _header.scss
+              </code>
+            </pre>
+          </div>
+          <p>
+            The header.scss in the above example will contain all the style
+            related to the header. It is completely separated from the main sass
+            file.
+          </p>
+          <ul>
+            <li>
+              But in order to use a partial in the main sass file, we have to
+              use @import keyword without added .scss extension.
+            </li>
+          </ul>
+          <div>
+            <pre>
+              <code>
+                Example - How to import a partial
+
+                @import 'header';
+                body
+                {
+                  font: sans-serif;
+                  background-color: #f4f4f4;
+                }
+              </code>
+            </pre>
+          </div>
+        </article>
+      </section>
+
+      <!-- main-section 4 -->
+      <!-- Has 2 code elements -->
+      <!-- Has 2 li elements -->
+      <!-- Has 1 p elements -->
+
+      <section class="main-section" id="Nesting">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Nesting</h2></header>
+        <article>
+          <p>
+            Nesting is a pretty simple. We can use sass to nest within our
+            selector. It is one of the powerful feature of sass.
+          </p>
+          <ul>
+            <li>
+              For example let’s imagine we have a section with a id = header.
+              The section header has a logo with a id of nav-logo and links with
+              a id nav-links inside it. So instead of writing CSS like this
+            </li>
+          </ul>
+          <div>
+            <pre> 
+             <code>
+
+               Example - Normal CSS
+
+               #header
+               { 
+                 background:white;
+               } 
+               #header
+               #nav-logo
+               {
+                 display:block;
+               } 
+               #header #nav-links 
+               {
+                 text-decoration:none;
+               }
+             </code>
+           </pre>
+          </div>
+          <ul>
+            <li>
+              We can write the scss like this as shown below.
+            </li>
+          </ul>
+          <div>
+            <pre>
+              <code>
+
+                Example - SCSS
+
+                #header
+                {
+                  background:white;
+                  &_#nav-logo
+                  {
+                    display:block;
+                  }
+                  &_#nav-links
+                  {
+                    text-decoration:none;
+                  } 
+                }
+              </code>
+            </pre>
+          </div>
+          <p>
+            Here the & sign indicated the root selector. That means #header. See
+            how easy it is. This way our code remains organized.
+          </p>
+        </article>
+      </section>
+
+      <!-- main-section 5 -->
+      <!-- Has 1 code elements -->
+      <!-- Has 2 li elements -->
+      <!-- Has 1 p elements -->
+
+      <section class="main-section" id="Mixins">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Mixins</h2></header>
+        <article>
+          <p>
+            Mixins are awesome. Once you get to understand it, you will never
+            let it go. It helps to keep you code DRY. Remember the principle you
+            started programming. It means Don’t repeat yourself.
+          </p>
+          <ul>
+            <li>
+              You can use mixins to create a block of code (Called as functions
+              in programming) and reuse the same block of code again anywhere in
+              the scss file.
+            </li>
+          </ul>
+          <div>
+            <pre>
+             <code>
+                
+                Example -  Mixin
+
+                @mixin transform($property)
+                { 
+                  -webkit-transform:$property;
+                  -ms-transform: $property;
+                  transform: $property;
+                }
+              </code>
+            </pre>
+          </div>
+          <ul>
+            <li>
+              In order to use a mixin we have to use the @include keyword. Sass
+              variables can be passed as a parameter to a mixin.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- main-section 6 -->
+      <!-- Has 3 code elements -->
+      <!-- Has 2 li elements -->
+      <!-- Has 2 p elements -->
+
+      <section class="main-section" id="Extend">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Extend</h2></header>
+        <article>
+          <p>
+            Extend is one of the easiest functionality which can be understood
+            by the end users of sass. It helps us in reusing the css properties
+            and helps us in keeping our code DRY
+          </p>
+          <ul>
+            <li>
+              We can use a % and create a placeholder selector. Sass will not
+              compile the style which are not extended. So basically if a
+              placeholder selector is created and is not extended then it will
+              not reflect in the css file.
+            </li>
+          </ul>
+          <div>
+            <pre>
+              <code>
+
+                Example - 
+                Creating a Placeholder Selector 1
+
+                %card
+                {
+                  max-width:400px;
+                  height:120px;
+                  background:white;
+                  padding:20px;
+                  margin:10px
+                }
+            </code>
+          </pre>
+          </div>
+          <div>
+            <pre>
+              <code>
+
+                Example - 
+                Creating a Placeholder Selector 2
+
+                %error
+                {
+                  color:red;
+                }
+              </code>
+            </pre>
+          </div>
+          <ul>
+            <li>You can extend using the @extend keyword.</li>
+          </ul>
+          <div>
+            <pre>
+              <code>
+
+                Example - 
+                Extending a Placeholder Selector
+
+                .black-card
+                {
+                  @extend card;
+                  background:black;
+                } 
+                </code>
+              </pre>
+          </div>
+          <p>
+            In the above example sass will extend and add the card css
+            properties to the class black-card. But it will not compile the
+            %error placeholder to the css file. This helps us in only compiling
+            the code needed for the project.
+          </p>
+        </article>
+      </section>
+      <!-- main-section 7 -->
+      <!-- Has 1 code elements -->
+      <!-- Has 1 li elements -->
+      <!-- Has 1 p elements -->
+
+      <section class="main-section" id="Operators">
+        <!-- User Story #3: The first element within each .main-section should be a header
+             element which contains text that describes the topic of that section. -->
+        <header><h2 class="text-center">Operators</h2></header>
+        <article>
+          <p>
+            Mathematical operation can be done using sass. We can use all the
+            standard math operators like +, -, *, /, and %.
+          </p>
+          <div>
+            <pre>
+              <code>
+
+                Example - Operators
+
+                .container
+                {
+                  width: 600px /960 *100%;
+                }
+              </code>
+            </pre>
+          </div>
+
+          <p>
+            That’s all about sass. It will very simple to use. Now that you have
+            a basic idea about sass. Go and start working with it.
+          </p>
+          <p>
+            Learn more about sass from
+            <a class="link" target="_blank" href="https://sass-lang.com/"
+              >here.</a
+            >
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- User Story #8: I can see a nav element with a corresponding id="navbar".  -->
+
+    <nav id="navbar" class="text-center">
+      <!-- User Story #9: The navbar element should contain one header element
+         which contains text that describes the topic of the technical documentation. -->
+
+      <header><h2>Introduction to Sass</h2></header>
+
+      <!-- User Story #10: Additionally, the navbar should contain link (a) elements with the class of nav-link.
+         There should be one for every element with the class main-section -->
+
+      <!-- User Story #11: The header element in the navbar must come before any link (a) elements in the navbar. -->
+
+      <!-- User Story #12: Each element with the class of nav-link should contain text that corresponds to the header
+         text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world"). -->
+
+      <!-- User Story #13: When I click on a navbar element, the page should navigate to the corresponding section of 
+        the main-doc element (e.g. If I click on a nav-link element that contains the text "Hello world", 
+        the page navigates to a section element that has that id and contains the corresponding header.-->
+
+      <a href="#Installing_Sass" class="nav-link">Installing Sass</a>
+      <a href="#Variables" class="nav-link">Variables</a>
+      <a href="#Partials" class="nav-link">Partials</a>
+      <a href="#Nesting" class="nav-link">Nesting</a>
+      <a href="#Mixins" class="nav-link">Mixins</a>
+      <a href="#Extend" class="nav-link">Extend</a>
+      <a href="#Operators" class="nav-link">Operators</a>
+    </nav>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  </body>
+</html>
